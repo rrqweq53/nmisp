@@ -2,28 +2,17 @@
 #       Anaconda Inc., Using conda with Travis CI, Conda documentation, https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
 #       .travis.yml for gcc-5 compiler support on Travis CI , https://gist.github.com/cotsog/3ce84675af0d74438d91
 #       CodeChat, .travis.yml - Travis CI configuration, https://pythonhosted.org/CodeChat/.travis.yml.html
-#       Travis CI, Python example (unsupported languages), https://docs.travis-ci.com/user/multi-os/#python-example-unsupported-languages
 
-matrix:
-  include:
-    - os : linux
-      sudo: required
-      python: "3.6"
-    - os : linux
-      sudo: required
-      python: "3.7"
-    - os : linux
-      python: "nightly"
-    - os : osx
-      sudo: required
-      python: "3.6"
-    - os : osx
-      sudo: required
-      python: "3.7"
-    - os : osx
-      sudo: required
-      python: "nightly"
+sudo: required
 
+os:
+  - linux
+  - osx
+
+python: 
+  - "3.6"
+  - "3.7"
+  - "nightly"
 
 before_install:
   # C++14
